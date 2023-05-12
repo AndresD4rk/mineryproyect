@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
 
@@ -64,10 +66,11 @@ $contenido = file_get_contents($ruta_archivo);
       
     }echo "</tr>";
   }
-  echo "</table>";
+  echo "</table></div>";
 echo "<br><br>";
 
 $valores = array();
+$etiqueta = array();
 
 foreach($lineas as $i => $linea) {
   $campos = str_getcsv($linea, ",");
@@ -75,22 +78,53 @@ foreach($lineas as $i => $linea) {
     if ($i > 0) { // Ignorar la primera fila (encabezados de columna)
       // Agregar el valor al array de valores
       $valores[] = $campos[$columna_seleccionada];
+      
     }
   }
 }
-
 // Contar la frecuencia de cada valor en el array de valores
+$etiqueta = array_unique($valores);
+$etiqueta = array_values($etiqueta);
 $frecuencias = array_count_values($valores);
-
 // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
 echo "<table>";
 echo "<tr><th>Valor</th><th>Frecuencia</th></tr>";
 foreach ($frecuencias as $valor => $frecuencia) {
   echo "<tr><td>" . htmlspecialchars($valor) . "</td><td>" . htmlspecialchars($frecuencia) . "</td></tr>";
 }
-echo "</table>";
-
+echo  "</table>";
+print_r($etiqueta);
 ?>
+<canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas>
 
+<?php 
+// Obtener los valores de frecuencia
+$frecuencias = array_values($frecuencias);
+
+
+// Obtener los colores para la gráfica
+$colores = array('#FF6384', '#36A2EB', '#FFCE56', '#8BC34A', '#9C27B0');
+?>
+<script>
+// Obtener el elemento canvas
+var canvas = document.getElementById('grafica-torta');
+
+
+// Obtener el elemento canvas
+var canvas = document.getElementById('grafica-torta');
+
+// Crear la gráfica de torta
+var chart = new Chart(canvas, {
+  type: 'pie',
+  data: {
+    labels: <?php echo json_encode($etiqueta); ?>,
+    datasets: [{
+      data: <?php echo json_encode($frecuencias); ?>,
+      backgroundColor: <?php echo json_encode($colores); ?>
+    }]
+  }
+});
+
+</script>
 </body>
 </html>
