@@ -51,7 +51,7 @@ $contenido = file_get_contents($ruta_archivo);
   $columna_seleccionada = $_POST['columna'];
 
   // Imprimir una tabla HTML con los datos de la columna seleccionada
-  echo "<div style='max-height: 300px;overflow-y: auto;'>
+  /* echo "<div style='max-height: 300px;overflow-y: auto;'>
   <table class='table table-dark table-hover'>";;
   
   foreach($lineas as $i => $linea) {
@@ -67,7 +67,7 @@ $contenido = file_get_contents($ruta_archivo);
       
     }echo "</tr>";
   }
-  echo "</table></div>";
+  echo "</table></div>"; */
 echo "<br><br>";
 
 $valores = array();
@@ -111,16 +111,14 @@ foreach ($frecuencias as $valor => $frecuencia) {
        datanalisis (idga, valor, frecuencia)
        VALUES ('$idga','$name','$frenc')");
         if ($sql) {
-          echo'<script type="text/javascript">
-          alert("Categoria Registrada");
-          </script>';         
+          //echo'<script type="text/javascript">  alert("Categoria Registrada");      </script>';         
         } else {
         
         }
 
 }
 echo  "</table>";
-print_r($etiqueta);
+//print_r($etiqueta);
 ?>
 <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas>
 
