@@ -11,6 +11,7 @@
 <body>
 
 <?php
+include "conexion.php";
 session_start();
 
 if (!isset($_SESSION["archivo"])) {
@@ -86,11 +87,37 @@ foreach($lineas as $i => $linea) {
 $etiqueta = array_unique($valores);
 $etiqueta = array_values($etiqueta);
 $frecuencias = array_count_values($valores);
+
 // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
 echo "<table>";
 echo "<tr><th>Valor</th><th>Frecuencia</th></tr>";
+$idga;
+$sql = $conexion->query("SELECT MAX(idga) FROM datanalisis");
+if ($datos = $sql->fetch_array()) {
+    $idga = $datos['MAX(idga)'];
+    $idga++;
+} else {
+    $idga = 1;
+}
 foreach ($frecuencias as $valor => $frecuencia) {
   echo "<tr><td>" . htmlspecialchars($valor) . "</td><td>" . htmlspecialchars($frecuencia) . "</td></tr>";
+  //Subida de los datos a la bd
+  $name = htmlspecialchars($valor);
+  $frenc = htmlspecialchars($frecuencia);
+
+  
+
+  $sql = $conexion->query("INSERT INTO
+       datanalisis (idga, valor, frecuencia)
+       VALUES ('$idga','$name','$frenc')");
+        if ($sql) {
+          echo'<script type="text/javascript">
+          alert("Categoria Registrada");
+          </script>';         
+        } else {
+        
+        }
+
 }
 echo  "</table>";
 print_r($etiqueta);
