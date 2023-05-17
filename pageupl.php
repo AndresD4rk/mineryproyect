@@ -3783,6 +3783,50 @@ License: For each use you must have a valid license purchased only from above li
                     <div class="d-flex flex-column flex-column-fluid">
 
 
+<br>
+<div class="container flex-center">
+<div class="table-responsive">
+	<table class="table table-bordered">
+		<thead>
+			<tr class="fw-bold fs-6 text-gray-800">
+				<th>Name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Age</th>
+				<th>Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Tiger Nixon</td>
+				<td>System Architect</td>
+				<td>Edinburgh</td>
+				<td>61</td>
+				<td>2011/04/25</td>
+				<td>$320,800</td>
+			</tr>
+			<tr>
+				<td>Garrett Winters</td>
+				<td>Accountant</td>
+				<td>Tokyo</td>
+				<td>63</td>
+				<td>2011/07/25</td>
+				<td>$170,750</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<select class="form-select" aria-label="Select example">
+    <option>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+</select>
+<br>
+<input type="submit" class="btn btn-info">
+</div>
 
 
 
@@ -3792,44 +3836,6 @@ License: For each use you must have a valid license purchased only from above li
 
 
 
-
-
-
-                    
-
-
-
-
-
-
-
-
-                    <div class="d-flex flex-row flex-column-fluid">
-            <div class="d-flex flex-row-fluid bg-light flex-center">
-                
-            
-                        <div class="container1 bg-light flex-center">
-                            <form>
-                                <div class="card">
-                                <h3>Nombre del Archivo</h3>
-                                <input type="text" class="form-control" id="fileName">
-                                <br>
-                                    <h3>Subir Archivo</h3>
-                                    <div class="drop_box">
-
-                                        <header>
-                                            <h4>Elije tu archivo aquí</h4>
-                                        </header>
-                                        <p>Suporte solo para: CSV</p>
-                                        <input type="file" hidden accept=".doc,.docx,.pdf" id="fileID" style="display:none;">
-                                        <button class="btn">Escoje tu archivo</button>
-                                    </div>
-                                    <br>
-                                    <input type="submit" class="btn btn-info">
-                                </div>
-                            </form>
-                        </div>
-                        </div></div>
 
 
 
