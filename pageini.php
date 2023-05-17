@@ -3795,7 +3795,7 @@ License: For each use you must have a valid license purchased only from above li
 
 
 
-                    
+
 
 
 
@@ -3809,7 +3809,7 @@ License: For each use you must have a valid license purchased only from above li
                 
             
                         <div class="container1 bg-light flex-center">
-                            <form>
+                            <form action="pageupl.php" method="post" enctype="multipart/form-data">
                                 <div class="card">
                                 <h3>Nombre del Archivo</h3>
                                 <input type="text" class="form-control" id="fileName">
@@ -3820,12 +3820,12 @@ License: For each use you must have a valid license purchased only from above li
                                         <header>
                                             <h4>Elije tu archivo aquí</h4>
                                         </header>
-                                        <p>Suporte solo para: CSV</p>
-                                        <input type="file" hidden accept=".doc,.docx,.pdf" id="fileID" style="display:none;">
-                                        <button class="btn">Escoje tu archivo</button>
+                                        <p>Suporte solo para: csv</p>
+                                        <input type="file"  accept=".csv" id="fileID"  name="archivo">
+                                        
                                     </div>
                                     <br>
-                                    <input type="submit" class="btn btn-info">
+                                    <input type="submit" class="btn btn-info" value="Subir archivo">
                                 </div>
                             </form>
                         </div>
