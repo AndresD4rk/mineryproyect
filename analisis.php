@@ -104,9 +104,7 @@ foreach ($frecuencias as $valor => $frecuencia) {
   //Subida de los datos a la bd
   $name = htmlspecialchars($valor);
   $frenc = htmlspecialchars($frecuencia);
-
   
-
   $sql = $conexion->query("INSERT INTO
        datanalisis (idga, valor, frecuencia)
        VALUES ('$idga','$name','$frenc')");
