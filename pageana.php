@@ -1,3 +1,7 @@
+<?php 
+include "conexion.php";
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 Author: Keenthemes
@@ -40,6 +44,7 @@ License: For each use you must have a valid license purchased only from above li
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/mecss.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -3791,8 +3796,7 @@ License: For each use you must have a valid license purchased only from above li
 
 
 <?php
-include "conexion.php";
-session_start();
+
 
 if (!isset($_SESSION["archivo"])) {
   // Si el identificador del archivo no est� en la sesi�n, redirigir de vuelta a la p�gina de carga
@@ -3869,6 +3873,8 @@ $etiqueta = array_values($etiqueta);
 $frecuencias = array_count_values($valores);
 
 // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
+echo "<div class'row'>";
+echo "<div class='row col-3'>";
 echo "<table>";
 echo "<tr><th>Valor</th><th>Frecuencia</th></tr>";
 $idga;
@@ -3896,10 +3902,13 @@ foreach ($frecuencias as $valor => $frecuencia) {
 
 }
 echo  "</table>";
+echo "</div>"
 //print_r($etiqueta);
 ?>
+<div class="row col-6">
 <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas>
-
+</div>
+</div>
 <?php 
 // Obtener los valores de frecuencia
 $frecuencias = array_values($frecuencias);
@@ -3925,7 +3934,6 @@ var chart = new Chart(canvas, {
 });
 
 </script>
-
 
 
 
