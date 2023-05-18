@@ -3873,8 +3873,8 @@ $etiqueta = array_values($etiqueta);
 $frecuencias = array_count_values($valores);
 
 // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
-echo "<div class'row'>";
-echo "<div class='row col-3'>";
+echo "<div class='row'>";
+echo "<div class='col-4'>";
 echo "<table>";
 echo "<tr><th>Valor</th><th>Frecuencia</th></tr>";
 $idga;
