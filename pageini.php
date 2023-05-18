@@ -39,6 +39,7 @@ License: For each use you must have a valid license purchased only from above li
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/mecss.css" rel="stylesheet" type="text/css" />
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -76,14 +77,9 @@ License: For each use you must have a valid license purchased only from above li
                 <div class="app-container container-xxl d-flex align-items-center justify-content-between" id="kt_app_header_container">
                     <div class="d-flex align-items-center">
                         <!--begin::Aside toggle-->
-                        <button class="btn btn-icon btn-color-gray-800 btn-active-color-primary justify-content-start w-30px w-lg-40px me-lg-5" id="kt_app_sidebar_toggle">
-                            <i class="ki-duotone ki-text-align-left fs-1 fs-lg-2x fw-bold">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                                <span class="path3"></span>
-                                <span class="path4"></span>
-                            </i>
-                        </button>
+                            <i class="ki-duotone ki-text-align-left fs-1 fs-lg-2x fw-bold">                              
+                                <img src="assets/media/logos/menu.png" alt="Icono" style="width: 20px; height: 20px;" id="kt_app_sidebar_toggle">                                
+                            </i>                        
                         <!--end::Aside toggle-->
                         <a href="../../demo47/dist/index.html">
                             <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-25px d-lg-none" />
@@ -165,8 +161,7 @@ License: For each use you must have a valid license purchased only from above li
                             <div class="app-navbar-item d-lg-none ms-2 me-n3" title="Show header menu">
                                 <div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_header_menu_toggle">
                                     <i class="ki-duotone ki-abstract-14 fs-2">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
+                                        
                                     </i>
                                 </div>
                             </div>
@@ -215,11 +210,11 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo47/dist/dashboards/ecommerce.html">
+                                <a class="menu-link" href="">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">eCommerce</span>
+                                    <span class="menu-title">Analisis</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
