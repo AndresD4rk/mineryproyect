@@ -72,13 +72,13 @@ License: For each use you must have a valid license purchased only from above li
     </script>
     <!--end::Theme mode setup on page load-->
     <!--begin::App-->
-    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root" >
         <!--begin::Page-->
-        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page" >
             <!--begin::Header-->
-            <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: false, lg: true}" data-kt-sticky-name="app-header-sticky" data-kt-sticky-offset="{default: false, lg: '300px'}">
+            <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: false, lg: true}" data-kt-sticky-name="app-header-sticky" data-kt-sticky-offset="{default: false, lg: '300px'}"  style="background-color: #e4e4e4;">
                 <!--begin::Header container-->
-                <div class="app-container container-xxl d-flex align-items-center justify-content-between bg-black" id="kt_app_header_container">
+                <div class="app-container container-xxl d-flex align-items-center justify-content-between" id="kt_app_header_container">
                     <div class="d-flex align-items-center">
                         <!--begin::Aside toggle-->
                         <button class="btn btn-icon btn-color-gray-800 btn-active-color-primary justify-content-start w-30px w-lg-40px me-lg-5" id="kt_app_sidebar_toggle">
@@ -91,7 +91,7 @@ License: For each use you must have a valid license purchased only from above li
                         </button>
                         <!--end::Aside toggle-->
                         <a href="../../demo47/dist/index.html">
-                            <img alt="Logo" src="assets/media/logos/Mi proyecto.png" class="h-25px d-lg-none" />
+                            <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-25px d-lg-none" />
                         </a>
                     </div>
                     <!--begin::Header wrapper-->
@@ -2847,8 +2847,8 @@ License: For each use you must have a valid license purchased only from above li
                         <!--begin::Logo-->
                         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
                             <a href="../../demo47/dist/index.html">
-                                <img alt="Logo" src="assets/media/logos/Mi proyecto.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-light-show" />
-                                <img alt="Logo" src="assets/media/logos/Mi proyecto.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-dark-show" />
+                                <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-light-show" />
+                                <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-dark-show" />
                             </a>
                         </div>
                         <!--end::Logo-->
@@ -3873,10 +3873,11 @@ $etiqueta = array_values($etiqueta);
 $frecuencias = array_count_values($valores);
 
 // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
-echo "<div class='row'>";
-echo "<div class='col-4'>";
-echo "<table>";
-echo "<tr><th>Valor</th><th>Frecuencia</th></tr>";
+echo "<div class='row col-8 mx-auto'>";
+echo "<div class='col-3 mx-auto'>";
+echo "<div class='table-responsive'>
+<table class='table table-bordered'>";        
+echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
 $idga;
 $sql = $conexion->query("SELECT MAX(idga) FROM datanalisis");
 if ($datos = $sql->fetch_array()) {
@@ -3901,8 +3902,9 @@ foreach ($frecuencias as $valor => $frecuencia) {
         }
 
 }
-echo  "</table>";
-echo "</div>"
+echo  "</tbody></table>";
+echo "</div>";
+echo "</div>";
 //print_r($etiqueta);
 ?>
 <div class="row col-6">
