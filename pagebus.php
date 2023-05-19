@@ -307,12 +307,10 @@ License: For each use you must have a valid license purchased only from above li
                                                 <td>
                                                     <span class="text-muted fw-semibold text-muted d-block fs-7"><?php echo"$datfec"; ?></span>
                                                 </td>
-                                            
                                         </tr>
                                         <?php
                                             }
                                             ?>
-
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>
