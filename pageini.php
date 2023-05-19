@@ -271,7 +271,11 @@ License: For each use you must have a valid license purchased only from above li
                                 <div class="mx-auto" style="background-color: #f1f2eb;">
                                     <form action="pageupl.php" method="post" enctype="multipart/form-data">
                                         <div class="card">
-                                            <h3>Nombre del Archivo</h3>
+                                        <br><br>
+                                            <h3>Nombre del Analisis</h3>
+                                            <input type="text" class="form-control" id="fileName">
+                                            <br>
+                                            <h3>Descripcion del Analisis</h3>
                                             <input type="text" class="form-control" id="fileName">
                                             <br>
                                             <h3>Subir Archivo</h3>
