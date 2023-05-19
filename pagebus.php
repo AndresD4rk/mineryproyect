@@ -1,3 +1,7 @@
+<?php
+include "conexion.php";
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 Author: Keenthemes
@@ -273,27 +277,41 @@ License: For each use you must have a valid license purchased only from above li
                                         <tr class="fw-bold text-muted">
                                             <th class="min-w-200px">Nombre</th>
                                             <th class="min-w-150px">Descripcion</th>
+                                            <th class="min-w-200px">Fecha</th>
                                         </tr>
                                     </thead>
                                     <!--end::Table head-->
                                     <!--begin::Table body-->
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="symbol symbol-45px me-5">
-                                                        <img src="assets/media/logos/qwertyu.png" alt="">
-                                                    </div>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <a href="#" class="text-dark fw-bold text-hover-primary fs-6">Analisis 1</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="text-muted fw-semibold text-muted d-block fs-7">En este espacio va la descripcion del analisis</span>
-                                            </td>
-                                        </tr>
+                                            <?php
+                                            $sql = $conexion->query("SELECT * FROM reganalisis");
+                                            while ($datos = $sql->fetch_array()) {
+                                                $datnom = $datos['nombre'];
+                                                $datdes = $datos['descripcion'];
+                                                $datfec = $datos['fecha']; ?>
 
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="symbol symbol-45px me-5">
+                                                            <img src="assets/media/logos/qwertyu.png" alt="">
+                                                        </div>
+                                                        <div class="d-flex justify-content-start flex-column">
+                                                            <a href="#" class="text-dark fw-bold text-hover-primary fs-6"><?php echo"$datnom"; ?></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted fw-semibold text-muted d-block fs-7"><?php echo"$datdes"; ?></span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted fw-semibold text-muted d-block fs-7"><?php echo"$datfec"; ?></span>
+                                                </td>
+                                            
+                                        </tr>
+                                        <?php
+                                            }
+                                            ?>
 
                                     </tbody>
                                     <!--end::Table body-->

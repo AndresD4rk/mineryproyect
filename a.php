@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "conexion.php";
 session_start();
 ?>
@@ -82,9 +82,9 @@ License: For each use you must have a valid license purchased only from above li
                 <div class="app-container container-xxl d-flex align-items-center justify-content-between" id="kt_app_header_container">
                     <div class="d-flex align-items-center">
                         <!--begin::Aside toggle-->
-                            <i class="ki-duotone ki-text-align-left fs-1 fs-lg-2x fw-bold">                              
-                                <img src="assets/media/logos/menu.png" alt="Icono" style="width: 20px; height: 20px;" id="kt_app_sidebar_toggle">                                
-                            </i>                        
+                        <i class="ki-duotone ki-text-align-left fs-1 fs-lg-2x fw-bold">
+                            <img src="assets/media/logos/menu.png" alt="Icono" style="width: 20px; height: 20px;" id="kt_app_sidebar_toggle">
+                        </i>
                         <!--end::Aside toggle-->
                         <a href="../../demo47/dist/index.html">
                             <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-25px d-lg-none" />
@@ -166,7 +166,7 @@ License: For each use you must have a valid license purchased only from above li
                             <div class="app-navbar-item d-lg-none ms-2 me-n3" title="Show header menu">
                                 <div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_header_menu_toggle">
                                     <i class="ki-duotone ki-abstract-14 fs-2">
-                                        
+
                                     </i>
                                 </div>
                             </div>
@@ -250,54 +250,54 @@ License: For each use you must have a valid license purchased only from above li
                     <div class="d-flex flex-column flex-column-fluid">
 
 
-<br>
+                        <br>
 
 
 
 
 
 
-<?php
+                        <?php
 
 
-if (!isset($_SESSION["archivo"])) {
-  // Si el identificador del archivo no est� en la sesi�n, redirigir de vuelta a la p�gina de carga
-  header("Location: upload.php");
-  exit;
-}
+                        if (!isset($_SESSION["archivo"])) {
+                            // Si el identificador del archivo no est� en la sesi�n, redirigir de vuelta a la p�gina de carga
+                            header("Location: upload.php");
+                            exit;
+                        }
 
-// Obtener el identificador del archivo de la sesi�n
-$identificador = $_SESSION["archivo"];
+                        // Obtener el identificador del archivo de la sesi�n
+                        $identificador = $_SESSION["archivo"];
 
-// Obtener la ruta del archivo temporal en el servidor
-$ruta_archivo = "tmp/" . $identificador;
+                        // Obtener la ruta del archivo temporal en el servidor
+                        $ruta_archivo = "tmp/" . $identificador;
 
-// Leer el contenido del archivo
-$contenido = file_get_contents($ruta_archivo);
+                        // Leer el contenido del archivo
+                        $contenido = file_get_contents($ruta_archivo);
 
-// Resto del c�digo para analizar el archivo
-// ...
+                        // Resto del c�digo para analizar el archivo
+                        // ...
 
-// Limpiar la sesi�n para que se pueda cargar otro archivo
+                        // Limpiar la sesi�n para que se pueda cargar otro archivo
 
 
-  // Encontrar la posici�n de la cadena de b�squeda
-  $posicion = strpos($contenido, "Volcado de datos para la tabla");
+                        // Encontrar la posici�n de la cadena de b�squeda
+                        $posicion = strpos($contenido, "Volcado de datos para la tabla");
 
-  // Obtener el contenido a partir de la posici�n
-  $contenido = substr($contenido, $posicion);
+                        // Obtener el contenido a partir de la posici�n
+                        $contenido = substr($contenido, $posicion);
 
-  // Dividir el contenido en l�neas
-  $lineas = explode("\n", $contenido);
+                        // Dividir el contenido en l�neas
+                        $lineas = explode("\n", $contenido);
 
-  // Obtener los nombres de las columnas
-  $columnas = str_getcsv($lineas[0], ",");
+                        // Obtener los nombres de las columnas
+                        $columnas = str_getcsv($lineas[0], ",");
 
-  // Obtener el �ndice de la columna seleccionada por el usuario
-  $columna_seleccionada = $_POST['columna'];
+                        // Obtener el �ndice de la columna seleccionada por el usuario
+                        $columna_seleccionada = $_POST['columna'];
 
-  // Imprimir una tabla HTML con los datos de la columna seleccionada
-  /* echo "<div style='max-height: 300px;overflow-y: auto;'>
+                        // Imprimir una tabla HTML con los datos de la columna seleccionada
+                        /* echo "<div style='max-height: 300px;overflow-y: auto;'>
   <table class='table table-dark table-hover'>";;
   
   foreach($lineas as $i => $linea) {
@@ -314,183 +314,159 @@ $contenido = file_get_contents($ruta_archivo);
     }echo "</tr>";
   }
   echo "</table></div>"; */
-echo "<br><br>";
+                        echo "<br><br>";
 
-$valores = array();
-$etiqueta = array();
+                        $valores = array();
+                        $etiqueta = array();
 
-foreach($lineas as $i => $linea) {
-  $campos = str_getcsv($linea, ",");
-  if (isset($campos[$columna_seleccionada])) {
-    if ($i > 0) { // Ignorar la primera fila (encabezados de columna)
-      // Agregar el valor al array de valores
-      $valores[] = $campos[$columna_seleccionada];
-      
-    }
-  }
-}
-// Contar la frecuencia de cada valor en el array de valores
-$etiqueta = array_unique($valores);
-$etiqueta = array_values($etiqueta);
-$frecuencias = array_count_values($valores);
+                        foreach ($lineas as $i => $linea) {
+                            $campos = str_getcsv($linea, ",");
+                            if (isset($campos[$columna_seleccionada])) {
+                                if ($i > 0) { // Ignorar la primera fila (encabezados de columna)
+                                    // Agregar el valor al array de valores
+                                    $valores[] = $campos[$columna_seleccionada];
+                                }
+                            }
+                        }
+                        // Contar la frecuencia de cada valor en el array de valores
+                        $etiqueta = array_unique($valores);
+                        $etiqueta = array_values($etiqueta);
+                        $frecuencias = array_count_values($valores);
 
-// Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
-echo "<div class='row col-11 mx-auto'>";
-echo "<div class='col-3 mx-auto'>";
-echo "<div class='table-responsive'>
-<table class='table table-bordered'>";        
-echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
-$idga;
-$sql = $conexion->query("SELECT MAX(idga) FROM datanalisis");
-if ($datos = $sql->fetch_array()) {
-    $idga = $datos['MAX(idga)'];
-    $idga++;
-} else {
-    $idga = 1;
-}
-foreach ($frecuencias as $valor => $frecuencia) {
-  echo "<tr><td>" . htmlspecialchars($valor) . "</td><td>" . htmlspecialchars($frecuencia) . "</td></tr>";
-  //Subida de los datos a la bd
-  $name = htmlspecialchars($valor);
-  $frenc = htmlspecialchars($frecuencia);
-  
-  $sql = $conexion->query("INSERT INTO
+                        // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
+                        echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
+                        echo "<div class='col-3 mx-auto'>";
+                        echo "<div class='table-responsive ' style='height: 70vh; padding-top: 9vh; padding-left: 2vh;'>
+                                <table class='table table-bordered'>";
+                        echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
+                        $idga;
+                        $sql = $conexion->query("SELECT MAX(idga) FROM datanalisis");
+                        if ($datos = $sql->fetch_array()) {
+                            $idga = $datos['MAX(idga)'];
+                            $idga++;
+                        } else {
+                            $idga = 1;
+                        }
+                        foreach ($frecuencias as $valor => $frecuencia) {
+                            echo "<tr><td>" . htmlspecialchars($valor) . "</td><td>" . htmlspecialchars($frecuencia) . "</td></tr>";
+                            //Subida de los datos a la bd
+                            $name = htmlspecialchars($valor);
+                            $frenc = htmlspecialchars($frecuencia);
+
+                            $sql = $conexion->query("INSERT INTO
        datanalisis (idga, valor, frecuencia)
        VALUES ('$idga','$name','$frenc')");
-        if ($sql) {
-          //echo'<script type="text/javascript">  alert("Categoria Registrada");      </script>';         
-        } else {
-        
-        }
-
-}
-echo  "</tbody></table>";
-echo "</div>";
-echo "</div>";
-//print_r($etiqueta);
-?>
-<div class="row col-8">
-<!-- <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas> -->
-<div id="piechart" class="mx-auto"></div>
-</div>
-</div>
-
-<?php 
-// Obtener los valores de frecuencia
-$frecuencias = array_values($frecuencias);
-
-
-// Obtener los colores para la gráfica
-$colores = array('#FF6384', '#36A2EB', '#FFCE56', '#8BC34A', '#9C27B0');
-?>
-<script>
-// Obtener el elemento canvas
-var canvas = document.getElementById('grafica-torta');
-
-// Crear la gráfica de torta
-var chart = new Chart(canvas, {
-  type: 'pie',
-  data: {
-    labels: <?php echo json_encode($etiqueta); ?>,
-    datasets: [{
-      data: <?php echo json_encode($frecuencias); ?>,
-      backgroundColor: <?php echo json_encode($colores); ?>
-    }]
-  }
-});
-
-</script>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['VALOR', 'FRECUENCIA'],
-<?php 
-for ($i = 0; $i < count($etiqueta); $i++) {
-  echo "['".$etiqueta[$i]."',".$frecuencias[$i]."],";
-}
-?>               
-        ]);
-
-        var options = {
-          title: 'My Daily Activities'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                    <!--begin::Footer-->
-                    <div id="kt_app_footer" class="app-footer py-2 py-lg-4" style="background-color: #121113;">
-                        <!--begin::Footer container-->
-                        <div class="app-container container-xxl d-flex flex-column flex-md-row flex-center flex-md-stack">
-                            <!--begin::Copyright-->
-                            <div class="text-dark order-2 order-md-1">
-                                <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                                <a href="" target="_blank" class="text-gray-800 text-hover-primary">AndD4r</a>
-                            </div>
-                            <!--end::Copyright-->
-                            <!--begin::Menu-->
-                            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                                <li class="menu-item">
-                                    <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-                                </li>
-                            </ul>
-                            <!--end::Menu-->
+                            if ($sql) {
+                                //echo'<script type="text/javascript">  alert("Categoria Registrada");      </script>';         
+                            } else {
+                            }
+                        }
+                        echo  "</tbody></table>";
+                        echo "</div>";
+                        echo "</div>";
+                        //print_r($etiqueta);
+                        ?>
+                        <div class="row col-8">
+                            <!-- <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas> -->
+                            <div id="piechart" style="margin: 0 auto;"></div>
                         </div>
-                        <!--end::Footer container-->
                     </div>
-                    <!--end::Footer-->
+                    <?php
+                    // Obtener los valores de frecuencia
+                    $frecuencias = array_values($frecuencias);
+                    ?>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load('current', {
+                            'packages': ['corechart']
+                        });
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+
+                            var data = google.visualization.arrayToDataTable([
+                                ['VALOR', 'FRECUENCIA'],
+                                <?php
+                                for ($i = 0; $i < count($etiqueta); $i++) {
+                                    echo "['" . $etiqueta[$i] . "'," . $frecuencias[$i] . "],";
+                                }
+                                ?>
+                            ]);
+
+                            var options = {
+                                title: 'Grafico'
+                            };
+
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                            chart.draw(data, options);
+                        }
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
-                <!--end:::Main-->
+                <!--begin::Footer-->
+                <div id="kt_app_footer" class="app-footer py-2 py-lg-4" style="background-color: #121113;">
+                    <!--begin::Footer container-->
+                    <div class="app-container container-xxl d-flex flex-column flex-md-row flex-center flex-md-stack">
+                        <!--begin::Copyright-->
+                        <div class="text-dark order-2 order-md-1">
+                            <span class="text-muted fw-semibold me-1">2023&copy;</span>
+                            <a href="" target="_blank" class="text-gray-800 text-hover-primary">AndD4r</a>
+                        </div>
+                        <!--end::Copyright-->
+                        <!--begin::Menu-->
+                        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+                            <li class="menu-item">
+                                <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
+                            </li>
+                        </ul>
+                        <!--end::Menu-->
+                    </div>
+                    <!--end::Footer container-->
+                </div>
+                <!--end::Footer-->
             </div>
-            <!--end::Wrapper-->
+            <!--end:::Main-->
         </div>
-        <!--end::Page-->
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Page-->
     </div>
     <!--end::App-->
-    
-   
-    
+
+
+
     <!--begin::Javascript-->
     <script>
         var hostUrl = "assets/";
