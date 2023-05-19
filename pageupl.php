@@ -298,7 +298,7 @@ License: For each use you must have a valid license purchased only from above li
 </div>
 <br><br>
     <div class="col-8 mx-auto">
-<form action="pageana.php" method="post" enctype="multipart/form-data">
+<form action="a.php" method="post" enctype="multipart/form-data">
     <label class="form-label" for="columna">Campo a analizar:</label>
     <select class="form-select" aria-label="Select example" id="columna" name="columna">
       <?php foreach($columnas as $i => $columna): ?>
