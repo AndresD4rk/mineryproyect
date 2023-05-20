@@ -201,11 +201,11 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link active" href="../../demo47/dist/index.html">
+                                <a class="menu-link active" href="pageini.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Default</span>
+                                    </span>                                    
+                                    <span class="menu-title">Inicio</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -215,7 +215,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="">
+                                <a class="menu-link" href="pagebus.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -336,7 +336,7 @@ License: For each use you must have a valid license purchased only from above li
                         // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
                         echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
                         echo "<div class='col-3 mx-auto'>";
-                        echo "<div class='table-responsive ' style='height: 70vh; padding-top: 9vh; padding-left: 2vh;'>
+                        echo "<div class='table-responsive ' style='height: 60vh;  padding-left: 2vh;'>
                                 <table class='table table-bordered'>";
                         echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
                         $idga;

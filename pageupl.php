@@ -199,11 +199,11 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link active" href="../../demo47/dist/index.html">
+                                <a class="menu-link active" href="pageini.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Default</span>
+                                    <span class="menu-title">Inicio</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -213,7 +213,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="">
+                                <a class="menu-link" href="pagebus.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
