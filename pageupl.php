@@ -276,17 +276,22 @@ License: For each use you must have a valid license purchased only from above li
                     echo '<tr>';
                 }
                 
-                  foreach($campos as $j => $campo) {
+                foreach ($campos as $j => $campo) {
                     if ($i === 0) {
-                      echo "<th>" . htmlspecialchars($campo) . "</th>"; 
+                        echo "<th>" . htmlspecialchars($campo) . "</th>";
                     } else {
-                        if($separador==0){
-                        echo "</thead>
-                        <tbody>";
-                        $separador=1;
+                        if ($separador == 0) {
+                            echo "</thead>
+                                        <tbody>";
+                            $separador = 1;
                         }
-                      echo "<td>" . htmlspecialchars(stripcslashes($campo)) . "</td>";}
+                        echo "<td>" . htmlspecialchars(stripcslashes($campo)) . "</td>";
                     }
+                    
+                }
+                if ($i >= 30) {
+                    break;
+                }
                   }
                   echo "</tr>";
                 }
