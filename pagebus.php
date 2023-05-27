@@ -287,6 +287,7 @@ License: For each use you must have a valid license purchased only from above li
                                             <?php
                                             $sql = $conexion->query("SELECT * FROM reganalisis");
                                             while ($datos = $sql->fetch_array()) {
+                                                $datid = $datos['idga'];
                                                 $datnom = $datos['nombre'];
                                                 $datdes = $datos['descripcion'];
                                                 $datfec = $datos['fecha']; ?>
@@ -297,20 +298,26 @@ License: For each use you must have a valid license purchased only from above li
                                                             <img src="assets/media/logos/qwertyu.png" alt="">
                                                         </div>
                                                         <div class="d-flex justify-content-start flex-column">
-                                                            <a href="#" class="text-dark fw-bold text-hover-primary fs-6"><?php echo"$datnom"; ?></a>
+                                                            <a href="#" class="text-dark fw-bold text-hover-primary fs-6"><?php echo "$datnom"; ?></a>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span class="text-muted fw-semibold text-muted d-block fs-7"><?php echo"$datdes"; ?></span>
+                                                    <span class="text-muted fw-semibold text-muted d-block fs-7"><?php echo "$datdes"; ?></span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-muted fw-semibold text-muted d-block fs-7"><?php echo"$datfec"; ?></span>
+                                                    <span class="text-muted fw-semibold text-muted d-block fs-7"><?php echo "$datfec"; ?></span>
+                                                </td>
+                                                <td>
+                                                    <form action="loadoldfile.php" method="post">
+                                                        <input type="hidden" name="datid" value="<?php echo $datid; ?>">
+                                                        <button type="submit" class="btn btn-primary">Cargar</button>
+                                                    </form>
                                                 </td>
                                         </tr>
-                                        <?php
+                                    <?php
                                             }
-                                            ?>
+                                    ?>
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>

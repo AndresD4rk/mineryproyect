@@ -204,7 +204,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <a class="menu-link active" href="pageini.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
-                                    </span>                                    
+                                    </span>
                                     <span class="menu-title">Inicio</span>
                                 </a>
                                 <!--end:Menu link-->
@@ -332,7 +332,20 @@ License: For each use you must have a valid license purchased only from above li
                         $etiqueta = array_unique($valores);
                         $etiqueta = array_values($etiqueta);
                         $frecuencias = array_count_values($valores);
+                        $nombre= $_SESSION["AnaNom"];
+                        $desc= $_SESSION["AnaDes"];
+                        $fechaActual = date('Y-m-d');
+?>
+<div class="row col-12 mx-auto">
+  <div class="col-12 text-center my-5">
+    <h1><?php echo "$nombre"; ?></h1>
+    <p><?php echo "$desc"; ?></p>
+  </div>
+</div>
+<br>
+<?php
 
+                       
                         // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
                         echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
                         echo "<div class='col-3 mx-auto'>";
@@ -354,12 +367,20 @@ License: For each use you must have a valid license purchased only from above li
                             $frenc = htmlspecialchars($frecuencia);
 
                             $sql = $conexion->query("INSERT INTO
-       datanalisis (idga, valor, frecuencia)
-       VALUES ('$idga','$name','$frenc')");
+                            datanalisis (idga, valor, frecuencia)
+                            VALUES ('$idga','$name','$frenc')");
                             if ($sql) {
                                 //echo'<script type="text/javascript">  alert("Categoria Registrada");      </script>';         
                             } else {
                             }
+                        }
+                        
+                        $sql = $conexion->query("INSERT INTO
+                            reganalisis (idga, nombre, descripcion, fecha)
+                            VALUES ('$identificador','$nombre','$desc','$fechaActual')");
+                        if ($sql) {
+                            //echo'<script type="text/javascript">  alert("Categoria Registrada");      </script>';         
+                        } else {
                         }
                         echo  "</tbody></table>";
                         echo "</div>";

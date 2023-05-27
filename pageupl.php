@@ -299,6 +299,8 @@ License: For each use you must have a valid license purchased only from above li
                 $identificador = uniqid();
                 move_uploaded_file($_FILES["archivo"]["tmp_name"], "tmp/" . $identificador);
                 $_SESSION["archivo"] = $identificador;
+                $_SESSION["AnaNom"] =$_POST["AnaNom"];
+                $_SESSION["AnaDes"] =$_POST["AnaDes"];
                 ?>			
 </div>
 <br><br>
