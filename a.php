@@ -426,7 +426,14 @@ License: For each use you must have a valid license purchased only from above li
 
 
 
-
+<script>
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'p' || event.key === 'P') {
+    event.preventDefault(); // Evita que se realice la acción por defecto de la tecla 'P'
+    window.print(); // Imprime la página
+  }
+});
+</script>
 
 
 

@@ -330,7 +330,7 @@ License: For each use you must have a valid license purchased only from above li
                         // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
                         echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
                         echo "<div class='col-3 mx-auto'>";
-                        echo "<div class='table-responsive ' style='height: 60vh;  padding-left: 2vh;'>
+                        echo "<div class='table-responsive ' style='padding-left: 2vh;'>
                                 <table class='table table-bordered'>";
                         echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
                         $idga;
@@ -382,7 +382,14 @@ License: For each use you must have a valid license purchased only from above li
                         }
                     </script>
 
-
+<script>
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'p' || event.key === 'P') {
+    event.preventDefault(); // Evita que se realice la acción por defecto de la tecla 'P'
+    window.print(); // Imprime la página
+  }
+});
+</script>
 
 
 
