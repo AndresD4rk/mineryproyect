@@ -250,7 +250,7 @@ License: For each use you must have a valid license purchased only from above li
                     <div class="d-flex flex-column flex-column-fluid">
 
 
-                        <br>
+                        
 
 
 
@@ -323,18 +323,17 @@ License: For each use you must have a valid license purchased only from above li
                             <h1><?php echo "$datnom"; ?></h1>
                             <p><?php echo "$datdes, realizado el: $datfec"; ?></p>
                           </div>
-                        </div>
-                        <br>
+                        </div>                        
                         <?php
 
                         // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
                         //echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
-                        echo '<div class="col-12 mx-auto text-center">
+                        echo '<div class="col-12 text-center my-5">
                             <!-- <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas> -->
-                            <div id="piechart" style="height:600px; margin: 0 auto;"></div>
+                            <div class="col-8 mx-auto" id="piechart" style="height:55vh;"></div>
                         </div>';
                         echo "<div class='col-12 mx-auto text-center my-5'>";
-                        echo "<div class='table-responsive ' style='padding-left: 2vh;'>
+                        echo "<div class='col-8 table-responsive mx-auto' style='padding-left: 2vh;'>
                                 <table class='table table-bordered'>";
                         echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
                         $idga;
