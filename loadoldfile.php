@@ -262,7 +262,7 @@ License: For each use you must have a valid license purchased only from above li
 
                         // Obtener el identificador del archivo de la sesi�n
                         $identificador = $_POST["datid"];
-                        echo $identificador;
+                        //echo $identificador;
 
                         // Obtener la ruta del archivo temporal en el servidor
                         $ruta_archivo = "tmp/" . $identificador;
@@ -291,7 +291,7 @@ License: For each use you must have a valid license purchased only from above li
     }echo "</tr>";
   }
   echo "</table></div>"; */
-                        echo "<br><br>";
+                        
 
                         $valores = array();
                         $etiqueta = array();
@@ -328,8 +328,12 @@ License: For each use you must have a valid license purchased only from above li
                         <?php
 
                         // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
-                        echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
-                        echo "<div class='col-3 mx-auto'>";
+                        //echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
+                        echo '<div class="col-12 mx-auto text-center">
+                            <!-- <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas> -->
+                            <div id="piechart" style="height:600px; margin: 0 auto;"></div>
+                        </div>';
+                        echo "<div class='col-12 mx-auto text-center my-5'>";
                         echo "<div class='table-responsive ' style='padding-left: 2vh;'>
                                 <table class='table table-bordered'>";
                         echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
@@ -345,10 +349,7 @@ License: For each use you must have a valid license purchased only from above li
                         echo "</div>";
                         //print_r($etiqueta);
                         ?>
-                        <div class="row col-8">
-                            <!-- <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas> -->
-                            <div id="piechart" style="margin: 0 auto;"></div>
-                        </div>
+                        
                     </div>
                     <?php
                     // Obtener los valores de frecuencia
