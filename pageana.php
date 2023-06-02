@@ -85,7 +85,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <img src="assets/media/logos/menu.png" alt="Icono" style="width: 20px; height: 20px;" id="kt_app_sidebar_toggle">                                
                             </i>                        
                         <!--end::Aside toggle-->
-                        <a href="../../demo47/dist/index.html">
+                        <a href="pageini.php">
                             <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-25px d-lg-none" />
                         </a>
                     </div>
@@ -93,7 +93,7 @@ License: For each use you must have a valid license purchased only from above li
                     <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
                         <!--begin::Logo-->
                         <div class="mx-auto">
-                            <a href="../../demo47/dist/index.html">
+                            <a href="pageini.php">
                                 <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-light-show" />
                                 <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-dark-show" />
                             </a>
@@ -105,9 +105,9 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin::User menu--><!--begin::User menu-->
                             <div class="app-navbar-item ms-2 ms-lg-5" id="kt_header_user_menu_toggle">
                                 <!--begin::Menu wrapper-->
-                                <div class="cursor-pointer symbol symbol-35px symbol-lg-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                <!--<div class="cursor-pointer symbol symbol-35px symbol-lg-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
                                     <img src="assets/media/avatars/300-11.jpg" alt="user" />
-                                </div>
+                                </div> -->
                                 <!--begin::User account menu-->
                                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
                                     <!--begin::Menu item-->
@@ -138,14 +138,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
-                                    <div class="menu-item px-5">
-                                        <a href="../../demo47/dist/apps/projects/list.html" class="menu-link px-5">
-                                            <span class="menu-text">My Projects</span>
-                                            <span class="menu-badge">
-                                                <span class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
-                                            </span>
-                                        </a>
-                                    </div>
+                                    
                                     <!--end::Menu item-->
 
 
