@@ -31,7 +31,7 @@ License: For each use you must have a valid license purchased only from above li
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="assets/media/logos/qwertyu.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -184,7 +184,7 @@ License: For each use you must have a valid license purchased only from above li
                             <div class="menu-item">
                                 <!--begin:Menu content-->
                                 <div class="menu-content">
-                                    <span class="menu-section fs-5 fw-bolder ps-1 py-1">Home</span>
+                                    <span class="menu-section fs-5 fw-bolder ps-1 py-1">Menu</span>
                                 </div>
                                 <!--end:Menu content-->
                             </div>
@@ -194,7 +194,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link active" href="pageini.php">
+                                <a class="menu-link" href="pageini.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -208,7 +208,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="pagebus.php">
+                                <a class="menu-link active" href="pagebus.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -219,18 +219,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--end:Menu item-->
 
 
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo47/dist/dashboards/projects.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Projects</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
+                            
                         </div>
                         <!--end::Primary menu-->
                     </div>
@@ -345,18 +334,18 @@ License: For each use you must have a valid license purchased only from above li
                         echo "<div class='table-responsive ' style='height: 60vh;  padding-left: 2vh;'>
                                 <table class='table table-bordered'>";
                         echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
-                        $idga;
+                       /*  $idga;
                         $sql = $conexion->query("SELECT MAX(idga) FROM datanalisis");
                         if ($datos = $sql->fetch_array()) {
                             $idga = $datos['MAX(idga)'];
                             $idga++;
                         } else {
                             $idga = 1;
-                        }
+                        } */
                         foreach ($frecuencias as $valor => $frecuencia) {
                             echo "<tr><td>" . htmlspecialchars($valor) . "</td><td>" . htmlspecialchars($frecuencia) . "</td></tr>";
                             //Subida de los datos a la bd
-                            $name = htmlspecialchars($valor);
+                            /* $name = htmlspecialchars($valor);
                             $frenc = htmlspecialchars($frecuencia);
 
                             $sql = $conexion->query("INSERT INTO
@@ -365,7 +354,7 @@ License: For each use you must have a valid license purchased only from above li
                             if ($sql) {
                                 //echo'<script type="text/javascript">  alert("Categoria Registrada");      </script>';         
                             } else {
-                            }
+                            } */
                         }
                         
                         $sql = $conexion->query("INSERT INTO
@@ -457,7 +446,7 @@ document.addEventListener('keydown', function(event) {
                         <!--begin::Copyright-->
                         <div class="text-dark order-2 order-md-1">
                             <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                            <a href="" target="_blank" class="text-gray-800 text-hover-primary">AndD4r</a>
+                            <a target="_blank" class="text-gray-800 text-hover-primary">Andrés Barrera</a>
                         </div>
                         <!--end::Copyright-->
                         <!--begin::Menu-->

@@ -31,7 +31,7 @@ License: For each use you must have a valid license purchased only from above li
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="assets/media/logos/qwertyu.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -182,7 +182,7 @@ License: For each use you must have a valid license purchased only from above li
                             <div class="menu-item">
                                 <!--begin:Menu content-->
                                 <div class="menu-content">
-                                    <span class="menu-section fs-5 fw-bolder ps-1 py-1">Home</span>
+                                    <span class="menu-section fs-5 fw-bolder ps-1 py-1">Menu</span>
                                 </div>
                                 <!--end:Menu content-->
                             </div>
@@ -192,7 +192,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link active" href="pageini.php">
+                                <a class="menu-link" href="pageini.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -206,7 +206,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="pagebus.php">
+                                <a class="menu-link active" href="pagebus.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -217,18 +217,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--end:Menu item-->
 
 
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="../../demo47/dist/dashboards/projects.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Projects</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
+                            
                         </div>
                         <!--end::Primary menu-->
                     </div>
@@ -270,6 +259,8 @@ License: For each use you must have a valid license purchased only from above li
                                             <th class="min-w-200px">Nombre</th>
                                             <th class="min-w-150px">Descripcion</th>
                                             <th class="min-w-200px">Fecha</th>
+                                            <th class="min-w-200px">Cargar</th>
+                                            <th class="min-w-200px">Eliminar</th>
                                         </tr>
                                     </thead>
                                     <!--end::Table head-->
@@ -304,6 +295,12 @@ License: For each use you must have a valid license purchased only from above li
                                                     <form action="loadoldfile.php" method="post">
                                                         <input type="hidden" name="datid" value="<?php echo $datid; ?>">
                                                         <button type="submit" class="btn btn-primary">Cargar</button>
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <form action="pagedel.php" method="post">
+                                                        <input type="hidden" name="datid" value="<?php echo $datid; ?>">
+                                                        <button type="submit" class="btn btn-danger">Eliminar</button>
                                                     </form>
                                                 </td>
                                         </tr>
@@ -350,21 +347,11 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin::Copyright-->
                             <div class="text-dark order-2 order-md-1">
                                 <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                                <a href="" target="_blank" class="text-gray-800 text-hover-primary">AndD4r</a>
+                                <a target="_blank" class="text-gray-800 text-hover-primary">Andrés Barrera</a>
                             </div>
                             <!--end::Copyright-->
                             <!--begin::Menu-->
-                            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                                <li class="menu-item">
-                                    <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-                                </li>
-                            </ul>
+                            
                             <!--end::Menu-->
                         </div>
                         <!--end::Footer container-->
