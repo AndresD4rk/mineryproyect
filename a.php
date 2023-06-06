@@ -139,7 +139,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
-                                    
+
                                     <!--end::Menu item-->
 
 
@@ -219,7 +219,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--end:Menu item-->
 
 
-                            
+
                         </div>
                         <!--end::Primary menu-->
                     </div>
@@ -314,27 +314,29 @@ License: For each use you must have a valid license purchased only from above li
                         $etiqueta = array_unique($valores);
                         $etiqueta = array_values($etiqueta);
                         $frecuencias = array_count_values($valores);
-                        $nombre= $_SESSION["AnaNom"];
-                        $desc= $_SESSION["AnaDes"];
+                        $nombre = $_SESSION["AnaNom"];
+                        $desc = $_SESSION["AnaDes"];
                         $fechaActual = date('Y-m-d');
-?>
-<div class="row col-12 mx-auto">
-  <div class="col-12 text-center my-5">
-    <h1><?php echo "$nombre"; ?></h1>
-    <p><?php echo "$desc"; ?></p>
-  </div>
-</div>
-<br>
-<?php
+                        ?>
+                        <div class="row col-12 mx-auto">
+                            <div class="col-12 text-center my-5">
+                                <h1><?php echo "$nombre"; ?></h1>
+                                <p><?php echo "$desc"; ?></p>
+                            </div>
+                        </div>
 
-                       
+                        <?php
+                        echo '<div class="col-12 text-center my-5">
+ <!-- <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas> -->
+ <div class="col-8 mx-auto" id="piechart" style="height:55vh;"></div>
+</div>';
+
                         // Imprimir una tabla HTML con las frecuencias de los valores en la columna seleccionada
-                        echo "<div class='row col-11 mx-auto ' style='height: 70vh;'>";
-                        echo "<div class='col-3 mx-auto'>";
-                        echo "<div class='table-responsive ' style='height: 60vh;  padding-left: 2vh;'>
+                        echo "<div class='col-12 mx-auto text-center my-5'>";
+                        echo "<div class='<div class='col-8 table-responsive mx-auto' style='padding-left: 2vh;'>                    
                                 <table class='table table-bordered'>";
                         echo "<thead><tr class='fw-bold fs-6 text-gray-800'><th >Valor</th><th>Frecuencia</th></tr></thead> <tbody>";
-                       /*  $idga;
+                        /*  $idga;
                         $sql = $conexion->query("SELECT MAX(idga) FROM datanalisis");
                         if ($datos = $sql->fetch_array()) {
                             $idga = $datos['MAX(idga)'];
@@ -356,7 +358,7 @@ License: For each use you must have a valid license purchased only from above li
                             } else {
                             } */
                         }
-                        
+
                         $sql = $conexion->query("INSERT INTO
                             reganalisis (idga, nombre, descripcion, fecha)
                             VALUES ('$identificador','$nombre','$desc','$fechaActual')");
@@ -369,10 +371,7 @@ License: For each use you must have a valid license purchased only from above li
                         echo "</div>";
                         //print_r($etiqueta);
                         ?>
-                        <div class="row col-8">
-                            <!-- <canvas id="grafica-torta" style="max-width: 500px; display: block; margin: 0 auto;"></canvas> -->
-                            <div id="piechart" style="margin: 0 auto;"></div>
-                        </div>
+
                     </div>
                     <?php
                     // Obtener los valores de frecuencia
@@ -408,14 +407,14 @@ License: For each use you must have a valid license purchased only from above li
 
 
 
-<script>
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'p' || event.key === 'P') {
-    event.preventDefault(); // Evita que se realice la acción por defecto de la tecla 'P'
-    window.print(); // Imprime la página
-  }
-});
-</script>
+                    <script>
+                        document.addEventListener('keydown', function(event) {
+                            if (event.key === 'p' || event.key === 'P') {
+                                event.preventDefault(); // Evita que se realice la acción por defecto de la tecla 'P'
+                                window.print(); // Imprime la página
+                            }
+                        });
+                    </script>
 
 
 
