@@ -85,14 +85,14 @@ License: For each use you must have a valid license purchased only from above li
                             <img src="assets/media/logos/menu.png" alt="Icono" style="width: 20px; height: 20px;" id="kt_app_sidebar_toggle">
                         </i>
                         <!--end::Aside toggle-->
-                        <a href="pageini.php">
+                        <a href="index.php">
                         </a>
                     </div>
                     <!--begin::Header wrapper-->
                     <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
                         <!--begin::Logo-->
                         <div class="mx-auto">
-                            <a href="pageini.php">
+                            <a href="index.php">
                                 <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-light-show" />
                                 <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-dark-show" />
                             </a>
@@ -192,7 +192,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="pageini.php">
+                                <a class="menu-link" href="index.php">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -241,10 +241,10 @@ License: For each use you must have a valid license purchased only from above li
                                 </h3>
                             </div>
                             <!-- <div class="col-6 text-end" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-bs-original-title="Click to add a user" data-kt-initialized="1">
-                                <a href="pageini.php" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">
+                                <a href="index.php" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">
                                     <i class="ki-duotone ki-plus fs-2"></i>Nuevo Analisis</a>
                             </div> -->
-                            <a href="pageini.php" class="col-2 text-end btn btn-sm btn-light btn-active-primary" style="text-align: left;"> <i class="ki-duotone ki-plus fs-2"></i>Nuevo Analisis</a>
+                            <a href="index.php" class="col-2 text-end btn btn-sm btn-light btn-active-primary" style="text-align: left;"> <i class="ki-duotone ki-plus fs-2"></i>Nuevo Analisis</a>
                         </div>
 
 

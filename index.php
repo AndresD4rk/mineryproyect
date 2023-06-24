@@ -81,7 +81,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <img src="assets/media/logos/menu.png" alt="Icono" style="width: 20px; height: 20px;" id="kt_app_sidebar_toggle">                                
                             </i>                        
                         <!--end::Aside toggle-->
-                        <a href="pageini.php">
+                        <a href="index.php">
                             <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-25px d-lg-none" />
                         </a>
                     </div>
@@ -89,7 +89,7 @@ License: For each use you must have a valid license purchased only from above li
                     <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
                         <!--begin::Logo-->
                         <div class="mx-auto">
-                            <a href="pageini.php">
+                            <a href="index.php">
                                 <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-light-show" />
                                 <img alt="Logo" src="assets/media/logos/qwertyu.png" class="h-70px d-none d-lg-inline app-header-logo-default theme-dark-show" />
                             </a>
